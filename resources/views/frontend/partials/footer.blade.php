@@ -12,7 +12,7 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
                 <h4 class="txt13 m-b-33">
                     About Us
                 </h4>
-                <ul class="m-b-70">
+                <ul class="list-inline">
                     {!! nl2br(e($aboutFooter->content)) !!}
                 </ul>
             </div>
@@ -21,7 +21,7 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
             <div class="col-sm-6 col-md-4 p-t-50">
                 <!-- Contact Us -->
                 <h4 class="txt13 m-b-33">Contact Us</h4>
-                <ul class="m-b-30">
+                <ul class="list-inline">
                     @if ($footer->description)
                         <li class="txt14 m-b-14">
                             <i class="fa fa-map-marker fs-16 dis-inline-block size19" aria-hidden="true"></i>
@@ -41,13 +41,14 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
                         <li class="txt14 m-b-14"></li>
                     @endif
                 </ul>
+                <br>
 
                 <!-- Follow Us -->
                 <h4 class="txt13 m-b-20">Follow Us</h4>
                 <ul class="list-inline">
                     @foreach ($socials as $social)
-                        <a href="{{ $social->url }}" target="_blank" class="fs-15 c-white m-r-10">
-                            <i class="{{ $social->icon_class }}" aria-hidden="true"></i>
+                        <a href="{{ $social->url }}" target="_blank" class="fs-15 c-black m-r-10">
+                            <i class="{{ $social->icon_class }}" aria-hidden="true"> </i>
                         </a>
                     @endforeach
                 </ul>
@@ -56,7 +57,7 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
             <!-- Pages -->
             <div class="footer-pages col-sm-6 col-md-4 p-t-50">
                 <h4 class="txt13 m-b-33">Pages</h4>
-                <ul>
+                <ul class="list-inline">
                     @foreach ($pages as $page)
                         <li>
                             <a href="{{ url($page->slug) }}">{{ $page->title }}</a>
