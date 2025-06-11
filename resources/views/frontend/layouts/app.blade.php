@@ -36,6 +36,24 @@
 </head>
 
 <style>
+    /* untuk button bahasa */
+    .lang-btn {
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: color 0.3s;
+    }
+
+    .wrap-menu-header.scrolled .lang-btn {
+        color: black;
+    }
+
+    .lang-btn.active-lang {
+        text-decoration: underline;
+    }
+
     /* Default: tombol disembunyikan */
     #prev-btn,
     #next-btn {
@@ -44,6 +62,7 @@
 
     /* Tampilkan tombol jika layar cukup besar (tablet/desktop) */
     @media (min-width: 768px) {
+
         #prev-btn,
         #next-btn {
             display: block !important;
@@ -91,6 +110,17 @@
     {{-- JS --}}
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- untuk button bahasa --}}
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.wrap-menu-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
     <script>
         const images = @json($aboutImages->pluck('image_url'));
         let currentIndex = 0;

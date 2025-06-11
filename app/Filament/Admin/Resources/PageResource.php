@@ -22,11 +22,21 @@ class PageResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\TextInput::make('title')->label('Judul Menu')->required()->maxLength(255)->rule('not_regex:/\s/', 'Slug tidak boleh mengandung spasi'),
-            Forms\Components\TextInput::make('slug')->label('Halaman Link')->required()->maxLength(255),
-            Forms\Components\Textarea::make('content')->label('Deskripsi Konten')->rows(10),
+            Forms\Components\Grid::make(2)
+                ->schema([
+                    Forms\Components\TextInput::make('title')->label('Judul Menu (ID)')->required()->maxLength(255),
+                    Forms\Components\TextInput::make('slug')->label('Halaman Link')->required()->maxLength(255)->rule('not_regex:/\s/', 'Slug tidak boleh mengandung spasi'),
+                ]),
+                Forms\Components\Textarea::make('content')->label('Deskripsi Konten (ID)')->rows(10),
+
+            Forms\Components\Grid::make(2)
+                ->schema([
+                    Forms\Components\TextInput::make('title_en')->label('Judul (EN)')->maxLength(255)->nullable(),
+                    Forms\Components\Textarea::make('content_en')->label('Deskripsi Konten (EN)')->rows(5)->nullable(),
+                ]),
         ]);
     }
+
 
     public static function table(Table $table): Table
     {

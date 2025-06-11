@@ -14,31 +14,51 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $pages = Page::all();
+        $lang = session('lang', 'id');
+
+        $pages = Page::all()->map(function ($page) use ($lang) {
+            return (object) [
+                'slug' => $page->slug,
+                'title' => $lang === 'en' && $page->title_en ? $page->title_en : $page->title,
+            ];
+        });        
+
         $footer = Footer::first();
         $aboutFooter = Page::find(2);
         $images = PageImage::all();
         $products = Product::all();
 
-        return view('frontend.home', compact('pages', 'footer', 'aboutFooter','images','products'));
+        return view('frontend.home', compact('pages', 'footer', 'aboutFooter', 'images', 'products'));
     }
 
     public function showPage($slug)
     {
+        $lang = session('lang', 'id');
+    
         $page = Page::where('slug', $slug)->firstOrFail();
-        
-        $pages = Page::all();
+    
+        // Jangan ubah slug-nya, cukup ubah title & content untuk tampilan
+        $page->title = $lang === 'en' && $page->title_en ? $page->title_en : $page->title;
+        $page->content = $lang === 'en' && $page->content_en ? $page->content_en : $page->content;
+    
+        $pages = Page::all()->map(function ($page) use ($lang) {
+            return (object) [
+                'slug' => $page->slug,
+                'title' => $lang === 'en' && $page->title_en ? $page->title_en : $page->title,
+            ];
+        });
+    
         $footer = Footer::first();
         $images = $page->images;
-
+    
         $products = collect();
-
-        if (Str::slug($page->title) === 'product') {
+        if ($page->slug === 'product') {
             $products = Product::all();
         }
-
+    
         return view('frontend.show', compact('page', 'pages', 'footer', 'images', 'products'));
     }
+
 
     public function product(Product $product)
     {

@@ -22,8 +22,10 @@ class ProductResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\TextInput::make('name')->required(),
-            Forms\Components\Textarea::make('description'),
+            Forms\Components\TextInput::make('name')->label('Nama Produk')->required(),
+            Forms\Components\Textarea::make('description')->label('Deskripsi Produk')->required(),
+            Forms\Components\TextInput::make('name_en')->label('Product Name (EN)'),
+            Forms\Components\Textarea::make('description_en')->label('Product Description (EN)'),
             Forms\Components\TextInput::make('price')->numeric()->required(),
             Forms\Components\FileUpload::make('image')->image()->directory('products'),
         ]);

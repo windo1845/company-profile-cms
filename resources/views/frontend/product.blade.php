@@ -19,11 +19,11 @@
             <div class="col-md-6 p-t-45 p-b-30">
                 <div class="wrap-text-romantic t-center">
                     <h3 class="tit3 t-center m-b-35 m-t-5">
-                        {{ $product->name }}
+                        {{ session('lang') === 'en' && $product->name_en ? $product->name_en : $product->name }}
                     </h3>
 
                     <p class="t-center m-b-22 size3 m-l-r-auto" style="font-size: 18px; color: #555;">
-                        {{ $product->description }}
+                        {{ session('lang') === 'en' && $product->description_en ? $product->description_en : $product->description }}
                     </p>
 
                     <p class="t-center" style="font-size: 22px; font-weight: bold; color: #000000;">
@@ -37,13 +37,15 @@
 
     <!-- Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-transparent border-0">
-          <div class="modal-body p-0">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: auto; border-radius: 10px;">
-          </div>
-          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                        style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
         </div>
-      </div>
     </div>
 @endsection

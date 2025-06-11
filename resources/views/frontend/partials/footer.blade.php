@@ -1,6 +1,6 @@
-
 {{-- garis melintang --}}
-<hr style="border: none; height: 4px; width: 300px; background-color: #17b128; 
+<hr
+    style="border: none; height: 4px; width: 300px; background-color: #17b128; 
 margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
 
 <!-- Footer -->
@@ -10,17 +10,21 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
             <!-- About Us -->
             <div class="col-sm-6 col-md-4 p-t-50">
                 <h4 class="txt13 m-b-33">
-                    About Us
+                    {{ session('lang') === 'en' ? 'About Us' : 'Tentang Kami' }}
                 </h4>
                 <ul class="list-inline">
-                    {!! nl2br(e($aboutFooter->content)) !!}
+                    {!! nl2br(
+                        e(session('lang') === 'en' && $aboutFooter->content_en ? $aboutFooter->content_en : $aboutFooter->content),
+                    ) !!}
                 </ul>
             </div>
 
             <!-- Contact Us + Follow Us digabung -->
             <div class="col-sm-6 col-md-4 p-t-50">
                 <!-- Contact Us -->
-                <h4 class="txt13 m-b-33">Contact Us</h4>
+                <h4 class="txt13 m-b-33">
+                    {{ session('lang') === 'en' ? 'Contact Us' : 'Kontak Kami' }}
+                </h4>
                 <ul class="list-inline">
                     @if ($footer->description)
                         <li class="txt14 m-b-14">
@@ -44,7 +48,9 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
                 <br>
 
                 <!-- Follow Us -->
-                <h4 class="txt13 m-b-20">Follow Us</h4>
+                <h4 class="txt13 m-b-20">
+                    {{ session('lang') === 'en' ? 'Follow Us' : 'Ikuti Kami' }}
+                </h4>
                 <ul class="list-inline">
                     @foreach ($socials as $social)
                         <a href="{{ $social->url }}" target="_blank" class="fs-15 c-black m-r-10">
@@ -56,11 +62,15 @@ margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
 
             <!-- Pages -->
             <div class="footer-pages col-sm-6 col-md-4 p-t-50">
-                <h4 class="txt13 m-b-33">Pages</h4>
+                <h4 class="txt13 m-b-33">
+                    {{ session('lang') === 'en' ? 'Pages' : 'Halaman' }}
+                </h4>
                 <ul class="list-inline">
                     @foreach ($pages as $page)
                         <li>
-                            <a href="{{ url($page->slug) }}">{{ $page->title }}</a>
+                            <a href="{{ url($page->slug) }}">
+                                {{ session('lang') === 'en' && $page->title_en ? $page->title_en : $page->title }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>

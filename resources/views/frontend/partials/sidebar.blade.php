@@ -15,14 +15,20 @@
 
         @foreach ($pages as $page)
             <li class="t-center m-b-13">
-                <a href="{{ url($page->slug) }}" class="txt19">{{ $page->title }}</a>
+                <a href="{{ url($page->slug) }}" class="txt19">
+                    {{ session('lang') === 'en' && $page->title_en ? $page->title_en : $page->title }}
+                </a>
             </li>
         @endforeach
 
-        <hr style="border: none; height: 4px; width: 190px; background-color: #17b128; 
+        <hr
+            style="border: none; height: 4px; width: 190px; background-color: #17b128; 
             margin: 30px auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
 
-        <li class="t-center m-b-13">FOLLOW US</li>
+        <li class="t-center m-b-13">
+            {{ session('lang') === 'en' ? 'FOLLOW US' : 'IKUTI KAMI' }}
+        </li>
+
         <li class="t-center">
             @foreach ($socials as $social)
                 <a href="{{ $social->url }}" target="_blank" class="fs-15 c-black m-r-10">
