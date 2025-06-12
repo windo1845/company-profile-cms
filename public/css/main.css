@@ -159,11 +159,11 @@ textarea {
 
 textarea:focus, input:focus {
   border-color: transparent !important;
-  box-shadow: 0 0 0px 2px #ec1d25;
-  -moz-box-shadow: 0 0 0px 2px #ec1d25;
-  -webkit-box-shadow: 0 0 0px 2px #ec1d25;
-  -o-box-shadow: 0 0 0px 2px #ec1d25;
-  -ms-box-shadow: 0 0 0px 2px #ec1d25;
+  box-shadow: 0 0 0px 2px #17b128;
+  -moz-box-shadow: 0 0 0px 2px #17b128;
+  -webkit-box-shadow: 0 0 0px 2px #17b128;
+  -o-box-shadow: 0 0 0px 2px #17b128;
+  -ms-box-shadow: 0 0 0px 2px #17b128;
 }
 
 input:focus::-webkit-input-placeholder { color:transparent; }
@@ -236,10 +236,10 @@ iframe {
 
 .cp-meter {
     border-radius: 50%;
-    border-top: solid 6px #ec1d25;
-    border-right: solid 6px #ec1d25;
-    border-bottom: solid 6px #ec1d25;
-    border-left: solid 6px #ec1d25;
+    border-top: solid 6px #17b128;
+    border-right: solid 6px #17b128;
+    border-bottom: solid 6px #17b128;
+    border-left: solid 6px #17b128;
     width: 48px;
     height: 48px;
     display: inline-block;
@@ -253,7 +253,7 @@ iframe {
     height: 12px;
     display: inline-block;
     box-sizing: border-box;
-    background-color: #ec1d25;
+    background-color: #17b128;
     position: absolute;
     top: 5px;
     left: 16px;
@@ -323,7 +323,7 @@ iframe {
 ///////////////////////////////////////////////////////////
 */
 td.active {
-  background-color: #ec1d25 !important;
+  background-color: #17b128 !important;
 }
 
 input[type="date" i] {
@@ -385,11 +385,11 @@ input[type="date" i] {
 
 .select2-container--focus {
   border-radius: 10px;
-  box-shadow: 0 0 0px 2px #ec1d25;
-  -moz-box-shadow: 0 0 0px 2px #ec1d25;
-  -webkit-box-shadow: 0 0 0px 2px #ec1d25;
-  -o-box-shadow: 0 0 0px 2px #ec1d25;
-  -ms-box-shadow: 0 0 0px 2px #ec1d25;
+  box-shadow: 0 0 0px 2px #17b128;
+  -moz-box-shadow: 0 0 0px 2px #17b128;
+  -webkit-box-shadow: 0 0 0px 2px #17b128;
+  -o-box-shadow: 0 0 0px 2px #17b128;
+  -ms-box-shadow: 0 0 0px 2px #17b128;
 }
 
 .select2-container--focus .select2-selection--single {
@@ -398,11 +398,11 @@ input[type="date" i] {
 
 .select2-container--below.select2-container--open {
   border-radius: 10px;
-  box-shadow: 0 0 0px 2px #ec1d25;
-  -moz-box-shadow: 0 0 0px 2px #ec1d25;
-  -webkit-box-shadow: 0 0 0px 2px #ec1d25;
-  -o-box-shadow: 0 0 0px 2px #ec1d25;
-  -ms-box-shadow: 0 0 0px 2px #ec1d25;
+  box-shadow: 0 0 0px 2px #17b128;
+  -moz-box-shadow: 0 0 0px 2px #17b128;
+  -webkit-box-shadow: 0 0 0px 2px #17b128;
+  -o-box-shadow: 0 0 0px 2px #17b128;
+  -ms-box-shadow: 0 0 0px 2px #17b128;
 }
 
 .select2-container--below.select2-container--open .select2-selection--single {
@@ -411,11 +411,11 @@ input[type="date" i] {
 
 .select2-container--above.select2-container--open {
   border-radius: 10px;
-  box-shadow: 0 0 0px 2px #ec1d25;
-  -moz-box-shadow: 0 0 0px 2px #ec1d25;
-  -webkit-box-shadow: 0 0 0px 2px #ec1d25;
-  -o-box-shadow: 0 0 0px 2px #ec1d25;
-  -ms-box-shadow: 0 0 0px 2px #ec1d25;
+  box-shadow: 0 0 0px 2px #17b128;
+  -moz-box-shadow: 0 0 0px 2px #17b128;
+  -webkit-box-shadow: 0 0 0px 2px #17b128;
+  -o-box-shadow: 0 0 0px 2px #17b128;
+  -ms-box-shadow: 0 0 0px 2px #17b128;
 }
 
 .select2-container--above.select2-container--open .select2-selection--single {
@@ -454,7 +454,7 @@ input[type="date" i] {
 
 .select2-container--default .select2-results__option[aria-selected=true],
 .select2-container .select2-results__option--highlighted[aria-selected] {
-  background-color: #ec1d25;
+  background-color: #17b128;
   color: #fff;
 }
 
@@ -496,7 +496,7 @@ input[type="date" i] {
   top: 0;
   left: 0;
   z-index: 100;
-  /* border-top: 5px solid #ec1d25; */
+  /* border-top: 5px solid #17b128; */
 }
 
 .wrap_header {
@@ -868,7 +868,7 @@ input[type="date" i] {
 .arrow-slick1:hover,
 .arrow-slick2:hover,
 .arrow-slick3:hover {
-  background-color: #ec1d25;
+  background-color: #17b128;
 }
 
 .next-slick1,
@@ -939,12 +939,12 @@ input[type="date" i] {
 
 .slick1-dots li button:hover {
     border: 3px solid white;
-    background-color: #d41b22;
+    background-color: #17b128;
 }
 
 .slick1-dots li.slick-active button {
     border: 3px solid white;
-    background-color: #d41b22;
+    background-color: #17b128;
 } 
 
 /*[ Caption ]
@@ -1419,7 +1419,7 @@ body {padding-right: 0px !important;}
 }
 
 .item-gallery-footer:hover:after {
-  background-color: rgba(236,29,37,0.7);
+  background-color: rgba(23,177,40,0.8);
 }
 
 

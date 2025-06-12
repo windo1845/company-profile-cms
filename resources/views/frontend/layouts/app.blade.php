@@ -42,8 +42,15 @@
         border: none;
         color: white;
         cursor: pointer;
-        padding: 5px 10px;
-        transition: color 0.3s;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: background-color 0.3s, color 0.3s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        font-size: 14px;
     }
 
     .wrap-menu-header.scrolled .lang-btn {
@@ -51,8 +58,11 @@
     }
 
     .lang-btn.active-lang {
-        text-decoration: underline;
+        background-color: #4fb85c;
+        color: white;
+        text-decoration: none;
     }
+
 
     /* Default: tombol disembunyikan */
     #prev-btn,
